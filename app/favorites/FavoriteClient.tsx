@@ -1,14 +1,8 @@
 'use client';
-
-import { toast } from "react-hot-toast";
-
-import axios from "axios";
-import { useCallback, useState } from "react";
-import { useRouter } from "next/navigation";
-import Container from "../components/Container";
-import Heading from "../components/Heading";
-import { SafeListing, SafeReservation, SafeUser } from "../types";
-import ListingCard from "../components/listings/ListingCard";
+import Container from "@/app/components/Container";
+import Heading from "@/app/components/Heading";
+import { SafeListing, SafeUser } from "@/app/types";
+import ListingCard from "@/app/components/listings/ListingCard";
 
 
 interface FavoriteClientProps{
@@ -29,6 +23,6 @@ const FavoritesClient:React.FC<FavoriteClientProps> =({
                 ))}
             </div>
         </Container>
-    )
+    );
 }
 export default FavoritesClient;

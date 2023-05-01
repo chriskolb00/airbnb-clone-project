@@ -80,7 +80,7 @@ const UserMenu:React.FC<UserMenuProps>=({
                 </div>
             )}
         </div>
-    )
+    );
 }
 
 export default UserMenu;

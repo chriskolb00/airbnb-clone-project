@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { CldUploadWidget } from "next-cloudinary";
 import Image from "next/image"
@@ -7,9 +7,10 @@ import {TbPhotoPlus} from "react-icons/tb";
 
 
 declare global{
-    var cloudinary: any;
+    var cloudinary: any
 }
 
+const uploadPreset = "ogfrtziq";
 interface ImageUploadProps{
     onChange:(value:string)=>void;
     value:string;
@@ -22,7 +23,7 @@ const ImageUpload:React.FC<ImageUploadProps> =({
     },[onChange]);
 
     return(
-        <CldUploadWidget onUpload={handleUpload}  uploadPreset="ogfrtziq" options={{ maxFiles:1 }}> 
+        <CldUploadWidget onUpload={handleUpload}  uploadPreset={uploadPreset} options={{ maxFiles:1 }}> 
             {({open} )=> {
                 return(
                     <div onClick={()=>open?.() } 
@@ -44,6 +45,6 @@ const ImageUpload:React.FC<ImageUploadProps> =({
                 )
             }}
         </CldUploadWidget>
-    )
+    );
 }
 export default ImageUpload;

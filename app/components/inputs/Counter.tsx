@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useCallback } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
@@ -48,6 +48,6 @@ const Counter:React.FC<CounterProps> =({
             
             </div>
         </div>
-    )
+    );
 }
 export default Counter;

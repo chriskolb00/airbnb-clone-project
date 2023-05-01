@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import useCountries from "@/app/hooks/useCountries";
 import { SafeUser } from "@/app/types";
@@ -21,7 +21,7 @@ interface ListingInfoProps{
         icon:IconType;
         label:string;
         description: string;
-    } | undefined
+    } | undefined;
     locationValue:string;
 }
 const ListingInfo:React.FC<ListingInfoProps> =({

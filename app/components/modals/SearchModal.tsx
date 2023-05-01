@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
-import { DateRange, Range } from "react-date-range";
+import { Range } from "react-date-range";
 import dynamic from "next/dynamic";
 import qs from "query-string";
 import { formatISO } from "date-fns";

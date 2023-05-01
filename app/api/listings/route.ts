@@ -4,7 +4,7 @@ import prisma from "@/app/libs/prismadb";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 
 export async function POST(
-    request: Request
+    request: Request,
 ){
     const currentUser = await getCurrentUser();
 
@@ -25,7 +25,7 @@ export async function POST(
 
     const listing = await prisma.listing.create({
         data:{
-            title, description, imageSrc, category, roomCount,bathroomCount, guestCount, locationValue:location.value, price:parseInt(price,10), userId:currentUser.id
+            title, description, imageSrc, category, roomCount, bathroomCount, guestCount, locationValue: location.value, price:parseInt(price,10), userId:currentUser.id
         }
     });
     return NextResponse.json(listing);

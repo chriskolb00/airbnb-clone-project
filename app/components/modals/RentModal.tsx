@@ -1,19 +1,20 @@
 'use client';
-import useRentModal from "@/app/hooks/useRentModal";
-import Modal from "./Modal";
+import dynamic from "next/dynamic";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import Heading from "../Heading";
+import axios from "axios";
+import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
+
+import CountrySelect from "../inputs/CountrySelect";
 import { categories } from "../navbar/Categories";
 import CategoryInput from "../inputs/CategoryInput";
-import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
-import CountrySelect from "../inputs/CountrySelect";
-import dynamic from "next/dynamic";
+import useRentModal from "@/app/hooks/useRentModal";
+import Heading from "../Heading";
+import Modal from "./Modal";
 import Counter from "../inputs/Counter";
 import ImageUpload from "../inputs/ImageUpload";
 import Inputs from "../inputs/Inputs";
-import axios from "axios";
-import { toast } from "react-hot-toast";
-import { useRouter } from "next/navigation";
 
 
 enum STEPS{
@@ -41,11 +42,11 @@ const RentModal =()=>{
     const imageSrc = watch('imageSrc');
     const bathroomCount = watch('bathroomCount');
 
-    const Map = useMemo(()=> dynamic(()=>import('../Map'), {
+    const Map = useMemo(()=> dynamic(()=> import('../Map'), {
         ssr:false
     }), [location]);
 
-    const setCustomValue=(id:string, value:any)=>{
+    const setCustomValue=(id:string, value: any)=>{
         setValue(id, value,{
             shouldDirty:true, shouldTouch:true, shouldValidate:true
         })
@@ -160,14 +161,15 @@ const RentModal =()=>{
     }
     return(
         <Modal title = "Airbnb your home!"
-        onClose={rentModal.onClose}  
+        disabled={isLoading}
         isOpen={rentModal.isOpen}
         onSubmit = {handleSubmit(onSubmit)} 
         actionLabel={actionLabel}
         secondaryActionLabel={secondaryActionLabel}
         secondaryAction={step === STEPS.CATEGORY? undefined: onBack} 
+        onClose={rentModal.onClose}  
         body={bodyContent}/>
-    )
+    );
 }
 
 export default RentModal;

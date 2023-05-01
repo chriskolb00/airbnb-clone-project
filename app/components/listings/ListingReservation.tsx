@@ -40,6 +40,6 @@ const ListingReservation:React.FC<ListingCategoryProps>=({
                 <div>${totalPrice}</div>
             </div>
         </div>
-    )
+    );
 }
 export default ListingReservation;

@@ -1,5 +1,3 @@
-
-
 import prisma from "@/app/libs/prismadb";
 
 export interface IListingsParams{
@@ -18,7 +16,7 @@ export default async function getListings(
     try{
         const {userId, roomCount, guestCount, bathroomCount, locationValue, category, startDate, endDate } = params;
 
-        let query: any= { };
+        let query: any= {};
 
         if(userId){
             query.userId= userId;
@@ -61,7 +59,7 @@ export default async function getListings(
             createdAt: listing.createdAt.toISOString(),
         }));
         return safeListings;
-    }catch (error: any){
-        throw new Error(error);
+    }catch (error){
+        throw new Error();
     }
 }

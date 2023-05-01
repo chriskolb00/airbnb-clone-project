@@ -1,6 +1,4 @@
 'use client';
-
-import { User } from "@prisma/client";
 import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
@@ -29,6 +27,6 @@ const Navbar:React.FC<NavbarProps>= ({
             </div>
             <Categories />
         </div>
-    )
+    );
 }
 export default Navbar;

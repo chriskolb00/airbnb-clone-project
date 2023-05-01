@@ -23,6 +23,7 @@ export async function POST(
     let favoriteIds=[...(currentUser.favoriteIds || [] )];
 
     favoriteIds.push(listingId);
+
     const user = await prisma.user.update({
         where: {
             id:currentUser.id
@@ -44,7 +45,7 @@ export async function DELETE(
     }
     const {listingId} = params;
 
-    if(!listingId ||typeof listingId!== 'string'){
+    if(!listingId ||typeof listingId !== 'string'){
         throw new Error('Invalid ID');
     }
     let favoriteIds = [...(currentUser.favoriteIds || [])];

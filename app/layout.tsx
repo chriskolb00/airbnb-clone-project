@@ -1,15 +1,15 @@
 import {Nunito} from "next/font/google"
 
 import './globals.css'
-import Navbar from "./components/navbar/Navbar";
+import Navbar from "@/app/components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
 import getCurrentUser from "./actions/getCurrentUser";
-import ToastProvider from "./providers/ToasterProvider";
 
-import RegisterModal from "./components/modals/RegisterModal";
-import RentModal from "./components/modals/RentModal";
-import LoginModal from "./components/modals/LoginModal";
-import SearchModal from "./components/modals/SearchModel";
+import ToastProvider from "@/app/providers/ToasterProvider";
+import RegisterModal from "@/app/components/modals/RegisterModal";
+import RentModal from "@/app/components/modals/RentModal";
+import LoginModal from "@/app/components/modals/LoginModal";
+import SearchModal from "@/app/components/modals/SearchModal";
 
 
 export const metadata = {
@@ -33,11 +33,11 @@ export default async function RootLayout({
       <body className={font.className}>
         <ClientOnly>
           <ToastProvider />
-          <SearchModal/>
           <LoginModal />
           <RegisterModal />
+          <SearchModal/>
           <RentModal />
-          <Navbar currentUser ={currentUser }/>
+          <Navbar currentUser ={currentUser}/>
         </ClientOnly>
         <div className="pb-20 pt-28">
           {children}

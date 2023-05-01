@@ -110,6 +110,6 @@ const Categories=()=>{
                 ))}
             </div>
         </Container>
-    )
+    );
 }
 export default Categories;

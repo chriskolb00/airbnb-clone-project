@@ -19,6 +19,6 @@ const CategoryInput:React.FC<CategoryInputProps> = ({
             </div>
 
         </div>
-    )
+    );
 }
 export default CategoryInput;

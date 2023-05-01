@@ -17,14 +17,12 @@ const ReservationsPage = async ()=>{
         );
     }
 
-    const reservations = await getReservations({
-        authorId: currentUser.id
-    });
+    const reservations = await getReservations({ authorId: currentUser.id });
 
     if(reservations.length ===0){
         return(
             <ClientOnly>
-                <EmptyState title="No reservations found" subtitle="Looks like you haven't made any reservations"></EmptyState>
+                <EmptyState title="No reservations found" subtitle="Looks like you haven't made any reservations"/>
             </ClientOnly>
         );
     }

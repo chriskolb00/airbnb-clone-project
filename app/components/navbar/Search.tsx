@@ -3,8 +3,6 @@
 import useCountries from '@/app/hooks/useCountries';
 import useSearchModal from '@/app/hooks/useSearchModal';
 import { differenceInDays } from 'date-fns';
-import { constants } from 'fs/promises';
-import { difference } from 'next/dist/build/utils';
 import { useSearchParams } from 'next/navigation';
 import { useMemo } from 'react';
 import {BiSearch} from 'react-icons/bi';
@@ -70,6 +68,6 @@ const Search=()=>{
                 </div>
             </div>
         </div>
-    )
+    );
 }
 export default Search;
